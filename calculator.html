@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Calculator — Visual Only (form/select)</title>
+  <style>
+    :root{--width:320px;--gap:10px}
+    body{font-family:system-ui,Segoe UI,Roboto,Arial;margin:40px;display:flex;justify-content:center}
+    .calc{width:var(--width);border-radius:12px;padding:18px;background:#fbfbfd;border:1px solid #e7e7ef;box-shadow:0 8px 24px rgba(20,20,50,0.04)}
+    .display{height:56px;border-radius:10px;background:white;border:1px solid #e0e0e6;margin-bottom:14px;display:flex;align-items:center;justify-content:flex-end;padding:12px;font-size:20px;color:#222}
+    form{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap)}
+    label{font-size:13px;color:#444}
+    input[readonly], select{height:44px;border-radius:8px;border:1px solid #ddd;padding:8px;font-size:16px;background:#fff}
+    .full{grid-column:span 2}
+    .controls{display:flex;gap:var(--gap);align-items:center}
+    .btn{flex:1;height:44px;border-radius:8px;border:1px solid #d2d6df;background:#f7f8fb;display:inline-flex;align-items:center;justify-content:center}
+    .note{font-size:12px;color:#666;margin-top:10px}
+  </style>
+</head>
+<body>
+  <main class="calc" aria-label="Calculator (visual-only form)">
+    <div class="display" aria-hidden="true">0</div>
+
+    <form aria-hidden="true">
+      <div class="full">
+        <label for="operand1">First number</label>
+        <input id="operand1" name="operand1" type="text" value="123" readonly>
+      </div>
+
+      <div>
+        <label for="operator">Operator</label>
+        <select id="operator" name="operator" disabled>
+          <option value="+">+</option>
+          <option value="-">−</option>
+          <option value="*">×</option>
+          <option value="/">÷</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="operand2">Second number</label>
+        <input id="operand2" name="operand2" type="text" value="45" readonly>
+      </div>
+
+      <div class="full">
+        <label for="result">Result</label>
+        <input id="result" name="result" type="text" value="168" readonly>
+      </div>
+
+      <div class="full controls">
+        <button type="button" class="btn" disabled>C</button>
+        <button type="submit" class="btn" disabled>=</button>
+      </div>
+
+      <div class="full note">This is a visual mockup built using <code>&lt;form&gt;</code> and <code>&lt;select&gt;</code>. All controls are disabled/readonly — no JavaScript or working logic included.</div>
+    </form>
+  </main>
+</body>
+</html>
